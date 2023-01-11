@@ -1,0 +1,612 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8"> 
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="description" content="introduction and form to programm" /> 
+      <title>Welcome</title>
+    <style>
+        :root {
+               --color-1:#be3144;
+               --penguin-face: white;
+               --penguin-picorna: orange;
+               --penguin-skin: gray;
+              }
+              * {
+          margin: 0;
+          padding: 0;
+              }
+        
+        html {
+          box-sizing: border-box;
+          scroll-behavior: smooth;
+        }
+        
+        @media (max-width: 75em) {
+          html {
+            font-size: 60%;
+          }
+        }
+        @media (max-width: 61.25em) {
+          html {
+            font-size: 58%;
+          }
+        }
+        @media (max-width: 28.75em) {
+          html {
+            font-size: 55%;
+          }
+        }
+        @media (max-width: 30.625em) {
+          main {
+            padding: 6rem 1rem;
+          }
+        }
+        @media (max-width: 28.75em) {
+          footer {
+            flex-direction: column;
+            text-align: center;
+          }
+        }
+         @media (max-width: 28.75em) {
+          .nav {
+            justify-content: center;
+          }
+        
+          .nav-list {
+            margin: 0 1rem;
+          }
+        }  
+        
+        @media (max-width: 28.75em) {
+          footer {
+            flex-direction: column;
+            text-align: center;
+          }
+        }
+        @media (max-width: 28.75em) {
+          footer > p {
+            font-size: 4rem;
+          }
+        }
+  body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+}
+/* penguin starts*/
+.penguin {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  margin-top: 0px;
+  z-index: 4;
+  position: relative;
+  transition: transform 1s ease-in-out 0ms;
+}
+
+.penguin * {
+  position: absolute;
+}
+
+.penguin:active {
+  transform: scale(1.5);
+  cursor: not-allowed;
+}
+
+.penguin-head {
+  width: 50%;
+  height: 45%;
+  background: linear-gradient(
+    45deg,
+    var(--penguin-skin),
+    rgb(239, 240, 228)
+  );
+  border-radius: 70% 70% 65% 65%;
+  top: 10%;
+  left: 25%;
+  z-index: 1;
+}
+
+.face {
+  width: 60%;
+  height: 70%;
+  background-color: var(--penguin-face);
+  border-radius: 70% 70% 60% 60%;
+  top: 15%;
+}
+
+.face.left {
+  left: 5%;
+}
+
+.face.right {
+  right: 5%;
+}
+
+.chin {
+  width: 90%;
+  height: 70%;
+  background-color: var(--penguin-face);
+  top: 25%;
+  left: 5%;
+  border-radius: 70% 70% 100% 100%;
+}
+
+.eye {
+  width: 15%;
+  height: 17%;
+  background-color: black;
+  top: 45%;
+  border-radius: 50%;
+}
+
+.eye.left {
+  left: 25%;
+}
+
+.eye.right {
+  right: 25%;
+}
+
+.eye-lid {
+  width: 150%;
+  height: 100%;
+  background-color: var(--penguin-face);
+  top: 25%;
+  left: -23%;
+  border-radius: 50%;
+}
+
+.blush {
+  width: 15%;
+  height: 10%;
+  background-color: pink;
+  top: 65%;
+  border-radius: 50%;
+}
+
+.blush.left {
+  left: 15%;
+}
+
+.blush.right {
+  right: 15%;
+}
+
+.beak {
+  height: 10%;
+  background-color: var(--penguin-picorna);
+  border-radius: 50%;
+}
+
+.beak.top {
+  width: 20%;
+  top: 60%;
+  left: 40%;
+}
+
+.beak.bottom {
+  width: 16%;
+  top: 65%;
+  left: 42%;
+}
+
+.shirt {
+  font: bold 20px Helvetica, sans-serif;
+  top: 130px;
+  left: 80px;
+  z-index: 1;
+  color: #6a6969;
+}
+
+.shirt div {
+  font-weight:  initial;
+  top: 22.5px;
+  left: 12px;
+}
+
+.penguin-body {
+  width: 53%;
+  height: 45%;
+  background: linear-gradient(
+    45deg,
+    rgb(134, 133, 133) 0%,
+    rgb(234, 231, 231) 25%,
+    white 67%
+  );
+  border-radius: 80% 80% 100% 100%;
+  top: 40%;
+  left: 23.5%;
+}
+
+.penguin-body::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 45%;
+  background-color: var(--penguin-skin);
+  top: 10%;
+  left: 25%;
+  border-radius: 0% 0% 100% 100%;
+  opacity: 70%;
+}
+
+.arm {
+  width: 30%;
+  height: 60%;
+  background: linear-gradient(
+    90deg,
+    var(--penguin-skin),
+    rgb(209, 210, 199)
+  );
+  border-radius: 30% 30% 30% 120%;
+  z-index: -1;
+}
+
+.arm.left {
+  top: 35%;
+  left: 5%;
+  transform-origin: top left; 
+  transform: rotate(130deg) scaleX(-1);
+  animation: 3s linear infinite wave;
+}
+
+.arm.right {
+  top: 0%;
+  right: -5%;
+  transform: rotate(-45deg);
+}
+
+@keyframes wave {
+  10% {
+    transform: rotate(110deg) scaleX(-1);
+  }
+  20% {
+    transform: rotate(130deg) scaleX(-1);
+  }
+  30% {
+    transform: rotate(110deg) scaleX(-1);
+  }
+  40% {
+    transform: rotate(130deg) scaleX(-1);
+  }
+}
+
+.foot {
+  width:  15%;
+  height: 30%;
+  background-color: var(--penguin-picorna);
+  top: 85%;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.foot.left {
+  left: 25%;
+  transform: rotate(80deg);
+}
+
+.foot.right {
+  right: 25%;
+  transform: rotate(-80deg);
+}
+/* penguin ends*/
+.starter {
+  background: var(--color-1);
+  border-bottom: 20px #290000;
+  width:100%;
+  height:225px;
+  margin:0;
+  padding:0;
+}
+
+/* nav */
+ul {
+  list-style: none;
+  display:flex;
+  justify-content: space-evenly;
+  margin:0;padding:0;
+  font-size: 1.5rem;
+}
+ul > li{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+  }
+  li > a {
+    text-shadow:2px 2px 1px #1a1529;
+  }
+  /* nav */
+.top {
+  position:absolute;
+  left:80%;}
+ /* links */
+ a:hover {
+  background-color:#6a6969;
+} 
+ a:visited{
+  color:azure;
+}
+ a {
+  color:#01d3f8;
+  font-style: italic;
+  text-decoration: none;border-radius:10% ;
+}
+/* link ends */
+.description {
+  color:aquamarine;
+  float:right;
+  padding-top: 10px;word-spacing: 2px;
+  width:100vh;}
+.radio {
+  color:aliceblue;
+  display:inline-block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 0;
+  width: 50%;
+  text-align: left;
+  position: relative;
+}
+  * {
+  scroll-behavior: smooth;
+}
+main {
+  border-top: #1a1529 solid 4px;
+  height:42rem;
+  overflow: hidden;
+}
+  .G1 { 
+          font-family: 'Raleway', sans-serif;
+          font-weight: 700;
+          font-size: 3rem;
+          word-wrap: break-word;
+          color:azure ;
+          text-shadow:3px 3px 2px #1a1529;
+          padding-top:3rem;
+          text-align: center;
+}
+  .me-d {
+    width:100%;
+    height:100%;
+    background:linear-gradient(#1a2d3d ,  #303841 );
+  }
+ .text {
+  color:aliceblue;
+  display:inline-block;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  padding-right: 0;
+  width: 50%;
+  text-align: left;
+}
+  .t1 {
+    margin-left:30px
+  }
+  .t2 {
+    margin-left: 27.5px;
+  }
+  .t3 {
+    margin-left:30px;
+  }
+  .t4 {
+    margin-left:8.5px;
+  }
+  img {
+  width: 100%;
+  object-fit:cover;
+  max-width: 200px;
+  height: 200px;
+  padding:0;
+  margin:0;
+}
+textarea {
+  margin-left: 20px;
+  margin-top:15px;
+  position: relative;
+  width:200px;
+  height:40px;
+}
+.submit {
+  height: 27px;
+  width:100px;
+  background-color:#141a3d;
+  color:azure;
+  border: none;
+  text-align: center;
+  position: absolute;
+  margin-top: 25px;
+  margin-left: 130px;
+ box-shadow:3px 3px 2px #000000;
+ border-radius: 5px;
+}
+/* fotter */
+footer {
+  font-weight: 300;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 25px;
+  background: var(--color-1);
+  border-top: 4px solid #1a1529;
+  border-bottom:20px solid var(--color-1);
+}
+address > a {
+  display:block;
+  justify-content: space-evenly;
+  text-align:center;
+  font-size: 1.3rem;
+  padding-top: 10px;
+  padding-bottom:10px;
+  transition: transform 0.3s ease-out;
+  text-shadow:2px 2px 1px #1a1529;
+}
+address > a:hover {
+  transform:translateY(-8px);
+  background:none;
+}
+.p1 {
+  font-size:3.5rem;
+  color:azure;
+  left:20px;
+  position: absolute;
+  text-shadow:2px 2px 1px #1a1529;
+  padding-top: 50px;
+}
+.p2 {
+  display:block;
+  font-size: 1.5rem;
+  color:#6fa2c0;
+  font-style: italic;
+  justify-content: space-evenly;
+  right:20px;
+  padding-top:10px;
+  padding-bottom: 10px;
+  margin-top:141vh;
+  position: absolute;
+  text-shadow:2px 2px 1px #1a1529;
+}
+.r1 {
+  top:0%;
+  padding-top:0 ;
+  right:34px !important;}
+.r2 {
+  top:30px !important;}
+.r3 {
+top:6rem !important;
+}
+/* fotter end*/
+
+/* audio ditails */
+audio {
+  float: right;
+  display: flex;
+  margin-top: 20px;
+}
+.o1,.o2 {
+  position:absolute;
+  padding:0;
+  right:0;
+}
+.o1 {
+  top:22rem !important;
+  right:2rem;
+}
+.o2 {
+  top:22rem !important;
+  right:22rem
+}
+.vid {
+  justify-content: space-evenly;
+  display: block;
+  text-align: center;
+  position:relative;
+  float: right;
+}
+.v1 {
+  top:-7.5rem !important;
+}
+.v2 {
+  top:-8rem !important;
+}
+/*auido end */
+
+    </style>
+</head>
+<body>
+  <form method="post" action="https://freecodecamp.org">
+  <!--the head elements-->
+   <header> 
+    <div class="starter">
+   <!-- penguin -->
+    <div class="top">
+    
+      <div class="penguin">
+        <div class="penguin-head">
+          <div class="face left"></div>
+          <div class="face right"></div>
+          <div class="chin"></div>
+          <div class="eye left">
+            <div class="eye-lid"></div>
+          </div>
+          <div class="eye right">
+            <div class="eye-lid"></div>
+          </div>
+          <div class="blush left"></div>
+          <div class="blush right"></div>
+          <div class="beak top"></div>
+          <div class="beak bottom"></div>
+        </div>
+        <div class="shirt">
+          <div></div>
+          <p>Hey!</p>
+        </div> 
+        <div class="penguin-body">
+          <div class="arm left"></div>
+          <div class="arm right"></div>
+          <div class="foot left"></div>
+          <div class="foot right"></div>
+        </div>
+      </div>
+    </div>
+     <!-- penguin ends -->
+    <nav>
+      <ul>
+        <li><a href="#info">Info</a></li>
+        <li><a href="#form">Form</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <p class="G1">Hey there Welcome !</p>
+    </div>
+  </header>
+    <!--main form-->
+    <main>
+    <div class="me-d" id="form">
+    <section >
+      <img src="file:///C:/Users/dagi/Downloads/Telegram%20Desktop/photo_2022-12-19_00-00-42.jpg" alt="owner pic">
+      <p class="description">
+        My name is Dagmawi mesfin.  
+        I was a high school student, when i recently granduated and started proggraming. First i started by responsive website designing at freecodecampe and i got my <a href="file:///C:/Users/dagi/Desktop/img/fcc.jpg">certificate.</a>
+        After that i finished html on sololearn and they gave me my 2nd <a href="file:///C:/Users/dagi/Desktop/img/solo.jpg">certificate.</a>
+        And am designing this website for cv and to be my project.
+      </p>
+      <p class="description vid v1"><i>Fun Fact:</i>I am a big fan of music.</p>
+      <p class="description vid v2">Here are some of my fav tracks...</p>
+      <audio controls autoplay name="media" class="o1">
+        <source src="file:///D:/New%20folder/Alarm/C-Blinding%20Light.mp3" type="audio/mpeg">
+      </audio>
+      <audio controls autoplay name="media" class="o2">
+        <source src="file:///D:/New%20folder/%E1%88%AE%E1%8D%8D%E1%8A%93%E1%8A%95/2nd/Rophnan%20-%20Hamet.mp3" type="audio/mpeg">
+      </audio>
+      <label class="radio">what do you prefer on studing?</label>
+<label class="radio"><input type="radio" name="form">Web designer</label>
+<label class="radio"><input type="radio" name="form">App developer</label>
+<label class="radio"><input type="radio" name="form">Hacking</label>
+    </section>
+    <section >
+      <label class="text">Name:     <input type="text" required placeholder="eg:john deep" class="t1"></label>
+      <label class="text">D.O.B.    <input type="date" required  class="t2"></label>
+      <label class="text">Email:    <input type="email" required placeholder="example@gmail.com" class="t3"></label>
+      <label class="text">Password: <input type="password" required placeholder="input password" pattern="[0-9a-fA-F]{4,10}" class="t4" ></label>
+      </section>
+        <textarea placeholder="If you have any comments..."></textarea>
+        <button type="submit" class="submit">Submit</button>
+  </div>
+  </form>
+</main>
+   <footer id="contact">
+    <p class="p1">Lets Work Together...</p>
+    <address>
+      <a href="tel:+251799115729" class="btn contact-details"><i class="fas fa-mobile-alt"></i>Phone</a>
+      <a href="mailto:dagimzcoder@gmail.com" class="btn contact-details"><i class="fas fa-at"></i>Email</a>
+      <a href="https://sololearn.org" class="web">sololearn</a>
+      <a href="https://freecodecamp.org" class="web">freeCodeCamp</a>
+    </address>
+    <span class="p2 r1"><p>Ethiopia</p></span>
+    <span class="p2 r2"><p>Addis Ababa</p></span> 
+    <p class="p2 r3">&copy; Created by DAGIM</p>
+  </footer>
+</body>
+</html>
